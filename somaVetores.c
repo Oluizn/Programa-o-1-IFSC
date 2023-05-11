@@ -1,27 +1,32 @@
 #include <stdio.h>
 
+void soma_vetores(int vetA[], int vetB[], int vetRes[], int dimensao)
+{
+    int i;
+    for (i = 0; i < dimensao; i++)
+    {
+        vetRes[i] = vetA[i] + vetB[i];
+    }
+    return;
+    
+}
+void print_vetor(int vet[], int dimensao)
+{
+    int i;
+    for (i = 0; i < dimensao; i++)
+    {
+        printf("%d, ", vet[i]);
+    }
+    return;
+}
 int main()
 {
-    int vet1[5], vet2[5], vet3[5];
-    int i;
-
-    for (i = 0; i < 5; i++)
-    {
-        vet1[i] = i;
-    }  
-    for (i = 0; i < 5; i++)
-    {
-        vet2[i] = vet1[i] * 5;
-    }
-    for (i = 0; i < 5; i++)
-    {
-        vet3[i] = vet1[i] + vet2[i];
-    }
-    for (i = 0; i < 5; i++)
-    {
-        printf("A soma dos dois vetores é %d\n", vet3[i]);
-    }
+    int x[5] = {6, 9, 7, 3, 1},
+        y[5] = {10, 3, 5, 8, 1},
+        w[5];
     
+    soma_vetores(x, y, w, 5);
+    print_vetor(w, 5);
     
     return 0;
 }

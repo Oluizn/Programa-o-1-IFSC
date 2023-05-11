@@ -68,6 +68,8 @@ int main()
             scanf("%d", &length);
             printf("Insira qual caracter deseja que componha a figura: ");
             scanf("%s", &caracter);
+            desenho_triangulo(length, caracter);
+        break;
     default:
         break;
     }

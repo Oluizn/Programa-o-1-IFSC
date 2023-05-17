@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void desenho_linha(int length, char caracter)
+void desenho_linha(int length, char caracter[2])
 {
     int i;
     for (i = 0; i <= length; i++)
@@ -9,7 +9,7 @@ void desenho_linha(int length, char caracter)
     }
     printf("\n");
 }
-void desenho_retangulo(int length, int height, char caracter)
+void desenho_retangulo(int length, int height, char caracter[2])
 {
     int i, j;
     for (i = 0; i < height; i++)
@@ -23,7 +23,7 @@ void desenho_retangulo(int length, int height, char caracter)
     }
     
 }
-void desenho_triangulo(int length, char caracter)
+void desenho_triangulo(int length, char caracter[2])
 {
     int i, j, larg_a;
     larg_a = length;
@@ -41,7 +41,8 @@ void desenho_triangulo(int length, char caracter)
 int main()
 {
     
-    int opcao, length, height, caracter;
+    int opcao, length, height;
+    char caracter[2];
     printf("Entre coma opção desejada: \n");
     printf("1: para desenhar linha\n");
     printf("2: para desenhar retangulo\n");
@@ -64,7 +65,7 @@ int main()
             scanf("%s", &caracter);
             desenho_retangulo(length, height, caracter);
         break;
-    case 3: printf("insira o comprimento e a altura do traingulo: ");
+    case 3: printf("insira o comprimento e a altura do triangulo: ");
             scanf("%d", &length);
             printf("Insira qual caracter deseja que componha a figura: ");
             scanf("%s", &caracter);

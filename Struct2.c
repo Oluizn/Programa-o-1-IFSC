@@ -15,8 +15,8 @@ int main()
 
     areaTrianguloRetangulo = (x.base*x.altura)/2;
 
-    sqrt(hipo = (pow(x.base, 2)+pow(x.altura, 2))); // ?
-    printf("%.2f\n %.2f\n", areaTrianguloRetangulo, hipo);
+    hipo = (pow(x.base, 2)+pow(x.altura, 2));
+    printf("%.2f\n%.2f\n", areaTrianguloRetangulo, sqrt(hipo));
 
     return 0;
 }

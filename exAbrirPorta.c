@@ -31,7 +31,7 @@ int password_change(char TabelaUser[H][U], char TabelaPssW[H][U], char user[U], 
 int main()
 {
     char TabelaUsers[H][U] = { "joao", "maria", "josefina", "lara", }, TabelaPssW[H][U] = {"joao123", "maria123", "josef123", "lara123",}, user[U], newpassword[U];
-    printf("%d\n", user_and_password(TabelaUsers, TabelaPssW, "lara", "lara123"));
+    printf("%d\n", user_and_password(TabelaUsers, TabelaPssW, "lara", "lara"));
     password_change(TabelaUsers, TabelaPssW, "joao", "joao321");
     return 0;
 }

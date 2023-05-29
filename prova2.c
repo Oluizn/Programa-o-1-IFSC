@@ -5,26 +5,20 @@ int procurar_usuario(char tabela[9][10], char usuario[10])
 {
     int i;
     for (i = 0; i < 7; i=i+3)
-    {
-        if(strcmp(&tabela[i][0], usuario)==0){
-            printf("O usuario esta na posicao %d da lista", i+1);
-            return i+1;}
-    }
+        if(strcmp(&tabela[i][0], usuario)==0)
+            return i+1;
     return -1;
 }
 void mudar_senha_de_acesso(char tabela[9][10], char usuario[10], char novasenha[10])
 {
-    int i;
-    for ( i = 0; i < 7; i=i+3)
-        if(strcmp(&tabela[i][0], usuario)==0){
-            strcpy(&tabela[i+1][0], novasenha);
-            break;
-            }
+    int aux;
+    aux = procurar_usuario(tabela, usuario);
+    if(aux!=-1)
+        strcpy(&tabela[aux][0], novasenha);
 }
 int contagem_usuario(char tabela[9][10], char letra[2])
 {
     int i, j, aux=0;
-
     for (i = 0; i < 7; i=i+3)
         for (j = 1; j < 9; j++)
             tabela[i][j]=0;
@@ -45,8 +39,8 @@ int main()
     char tabela[9][10] = {"eraldo", "beta", "rw", "silvana", "alfa", "r", "vica", "delta", "w"};
     char tabela1[9][10] = {"eraldo", "beta", "rw", "silvana", "alfa", "r", "vica", "delta", "w"};
     char tabela2[9][10] = {"eraldo", "beta", "rw", "estevao", "alfa", "r", "erica", "delta", "w"};
-    char tabela3[9][10] = {"eraldo", "beta", "rw", "silvana", "alfa", "r", "vica", "delta", "w"};
-    printf("%d\n\n", procurar_usuario(tabela, "eraldo"));
+    printf("O usuario esta na posicao %d da lista\n", procurar_usuario(tabela, "eraldo"));
+    printf("%d\n", procurar_usuario(tabela, "antonio"));
     print_tabela(tabela);
     printf("\n");
     mudar_senha_de_acesso(tabela, "eraldo", "omega");

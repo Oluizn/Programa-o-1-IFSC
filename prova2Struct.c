@@ -12,10 +12,11 @@ int search_userID(struct acesso x[3], char userID[10])
             return i+1;
     return -1;
 }
-void change_password(struct acesso x[3], char userID[10],char newpassword[10])
+void change_password(char userID[10], char newpassword[10])
 {
     int aux;
-    aux=search_userID(x->nome, userID);
+    struct acesso x[3];
+    aux=search_userID(x.nome, userID);
     if(aux!=-1)
         strcpy(x[aux].senha, newpassword);
 }

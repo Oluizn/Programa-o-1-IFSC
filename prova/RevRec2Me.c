@@ -8,15 +8,23 @@ Retornar o número de vogais removidas.
 
 int remove_vogal(char x[])
 {
-    int cont, j;
+    int cont=0, j=0;
+    char xcpy[256];
     for (int i = 0; x[i]!=0; i++)
-        if (x[i]!='a' || x[i]!='e' || x[i]!='i' || x[i]!='o' || x[i]!='u')
-            x[j++]=x[i];
-        else
+    {
+        char aux[2] = x[i];
+        if (aux =='a')
             cont++;
+        else
+            xcpy[j++]=aux;
+    }
+    xcpy[j]=0;
+    strcpy(x, xcpy);
     return cont;
 }
 int main()
 {
-
+    int num;
+    num = remove_vogal("alfa");
+    return 0;
 }

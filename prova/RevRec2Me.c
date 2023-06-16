@@ -10,10 +10,11 @@ int remove_vogal(char x[])
 {
     int cont=0, j=0;
     char xcpy[256];
+    
     for (int i = 0; x[i]!=0; i++)
     {
-        char aux[2] = x[i];
-        if (aux =='a')
+        char aux= x[i];
+        if (aux =='a' || aux =='e' || aux =='i' || aux =='o' || aux =='u')
             cont++;
         else
             xcpy[j++]=aux;
@@ -25,6 +26,8 @@ int remove_vogal(char x[])
 int main()
 {
     int num;
-    num = remove_vogal("alfa");
+    char str[10] = "antonio";
+    num = remove_vogal(str);
+    printf("Quantidade de vogais %d e string resultante %s", num, str);
     return 0;
 }

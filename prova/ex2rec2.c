@@ -39,7 +39,7 @@ int usuario_com_direito_leitura(char tabela[9][10])
     for (int i = 0; i < 9; i++)
         if (tabela[i][0]=='r')
             cont++;
-    return cont;    
+    return cont;
 }
 void printar_tabela(char tabela[9][10])
 {

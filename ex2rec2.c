@@ -14,7 +14,7 @@ char TabelaUsuarios[9][10] = {
 int procurar_usuario(char tabela[9][10], char usuario[])
 {
     for (int i = 0; i < 7; i=i+3)
-        if(strcmp(tabela[i], usuario)==0)
+        if(strcmp(&tabela[i][0], usuario)==0)
             return i+1;
     return -1;
 }
@@ -25,12 +25,9 @@ int modificar_senha(char tabela[9][10], char usuario[], char senha_antiga[], cha
     if (aux==-1)
         return -1;
     else
-        for (int i = 1; i < 8; i=i+3)
-            if(strcmp(tabela[i], senha_antiga)==0)
-            {
-                strcpy(tabela[i], senha_nova);
-                return 0;
-            }
+        if (strcmp(&tabela[aux][0], senha_antiga)==0){
+            strcpy(&tabela[aux][0], senha_nova);
+            return 1;}
     return -2;
 }
 int usuario_com_direito_leitura(char tabela[9][10])
@@ -44,7 +41,7 @@ int usuario_com_direito_leitura(char tabela[9][10])
 void printar_tabela(char tabela[9][10])
 {
     for (int i = 0; i < 9; i++)
-        printf("%s\n", tabela[i]);
+        printf("%s\n", &tabela[i][0]);
 }
 int main()
 {

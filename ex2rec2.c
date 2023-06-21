@@ -27,7 +27,7 @@ int modificar_senha(char tabela[9][10], char usuario[], char senha_antiga[], cha
     else
         if (strcmp(&tabela[aux][0], senha_antiga)==0){
             strcpy(&tabela[aux][0], senha_nova);
-            return 1;}
+            return 0;}
     return -2;
 }
 int usuario_com_direito_leitura(char tabela[9][10])

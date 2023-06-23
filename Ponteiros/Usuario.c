@@ -12,6 +12,7 @@ struct TRegistro
           {"lara",17,},
 };
 struct TRegistro *p;
+// implementação criando um ponteiro para struct e retornando um ponteiro para a posição da tabela
 struct TRegistro *retorna_usuario(struct TRegistro  *tabela, int tam_tabela, char *usuario)
 {
     for (int i = 0; i < tam_tabela; i++)
@@ -22,6 +23,7 @@ struct TRegistro *retorna_usuario(struct TRegistro  *tabela, int tam_tabela, cha
     }
     return NULL;
 }
+// implementação indexando o ponteiro como um vetor e retornando a posição desse vetor na tabela
 struct TRegistro *retorna_usuariov2(struct TRegistro  *tabela, int tam_tabela, char *usuario)
 {
     for (int i = 0; i < tam_tabela; i++)

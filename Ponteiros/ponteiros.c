@@ -11,5 +11,5 @@ void main()
     *p=10;
 
     printf("valor de x depois = %d\n", x);
-    printf("valor de p = %p\n", p);
+    printf("valor de endereço de p = %p\n", p);
 }

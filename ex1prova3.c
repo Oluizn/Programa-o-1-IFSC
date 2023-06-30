@@ -62,7 +62,7 @@ int main()
     printf("%s\n", retorna_aluno(tabela_alunos, "Silvana e Silva"));
     if (retorna_aluno(tabela_alunos, "Antonio")==NULL)
         printf("Usuário não encontrado na tabela\n");
-    printf("media do aluno %s = %.2f\n",tabela_alunos->nome, media_aluno(tabela_alunos, "Eraldo e Silva"));
+    printf("media do aluno %s = %.2f\n",tabela_alunos->nome, media_aluno(tabela_alunos, "Silvana e Silva"));
     printf("%.2f\n", media_aluno(tabela_alunos, "Luiz"));
     printf("media da turma %.2f\n", media_turma(tabela_alunos));
     printf("%d aluno acima da média\n", numero_alunos_acima_media(tabela_alunos));

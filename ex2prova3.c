@@ -4,29 +4,21 @@
 int num_vogais(char *p)
 {
     int cont=0;
-    while (p!=0)
-    {
-        for (int i = 0; p[i]!=0; i++)
-        {       
-            if (p[i]=='a' || p[i]=='e' || p[i]=='i' || p[i]=='o' || p[i]=='u')
-                cont++;
-            p++;
-        }
+    while (*p!=0)
+    {     
+        if (*p=='a' || *p=='e' || *p=='i' || *p=='o' || *p=='u' || *p=='A' || *p=='E' || *p=='I' || *p=='O' || *p=='U')
+            cont++;
+        p++;
     }
     return cont;
 }
 int main(int argc, char *argv[])
 {
-    int contador[argc];
-    if (argc>1)
-        for (int i = 0; i < argc; i++)
-        {
-            contador[i] = num_vogais(*argv);
-            argv++;
-        }
-    for (int i = 0; i < argc; i++)
+    int vogal;
+    for (int i = 1; i < argc; i++)
     {
-        printf("%s possui %d vogais.\n", argv++, contador[i]);
+        vogal = num_vogais(argv[i]);
+        printf("%s possui %d vogais\n", argv[i], vogal);
     }
     return 0;
 }

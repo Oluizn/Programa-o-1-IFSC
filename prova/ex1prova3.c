@@ -44,9 +44,7 @@ float media_turma(tipo_aluno *pturma)
 {
     float soma=0;
     for (int i = 0; i < TAM_USERS; i++)
-    {
         soma+=media_aluno(pturma, pturma[i].nome);
-    }
     return soma/TAM_USERS; 
 }
 int numero_alunos_acima_media(tipo_aluno *pturma)

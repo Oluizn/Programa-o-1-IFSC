@@ -12,4 +12,6 @@ float converte_temp(float temp, int flag)
     return temp_aux;
 }
 
-/*INCONCLUIDA*/
+int main(){
+    printf("%f", converte_temp(32, 1));
+}
